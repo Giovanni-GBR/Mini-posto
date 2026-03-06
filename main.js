@@ -105,5 +105,5 @@ function verificar() {
 bttGas.addEventListener("mousedown", startGas)
 bttGas.addEventListener("mouseup", stopGas)
 
-bttGas.addEventListener("touchdown", startGas)
-bttGas.addEventListener("touchup", stopGas)
+bttGas.addEventListener("touchstart", startGas)
+bttGas.addEventListener("touchend", stopGas)
