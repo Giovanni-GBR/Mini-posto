@@ -72,7 +72,7 @@ function resetGas(){
         quantGas2.textContent = numeroDoCliente + "L"
         gasLim.style.left = numeroDoCliente + "%"
         podeAbastecer = true
-    }, 2000)
+    }, 16)
     
 }
 
