@@ -27,7 +27,7 @@ function gerarNumero() {
 }
 
 function startGas(){
-    if (podeAbastecer == false) return
+    if (!podeAbastecer) return
     if (intervalo) return
     
 
@@ -52,6 +52,7 @@ function stopGas(){
     if (podeAbastecer == false) return
     verificar()
     podeAbastecer = false
+    document.querySelector("li").classList.remove("ativo")
 }
 
 function resetGas(){
@@ -63,10 +64,11 @@ function resetGas(){
     numero.textContent = gas + "L"
     gasLand.style.width = gas + "%"
     
-
+    
 
     setTimeout(() => {
         gerarNumero()
+        document.querySelector("li").classList.add("ativo")
         resultado.textContent = ""
         quantGas.textContent = numeroDoCliente
         quantGas2.textContent = numeroDoCliente + "L"
@@ -97,10 +99,19 @@ function verificar() {
         combo = 0
         nCombo.textContent = combo 
     }
+    lojaUpgrade()
     setTimeout(resetGas, 2000)
     money.textContent = dinheiro
     console.log(diferenca)
 }
+
+function lojaUpgrade(){
+    if (dinheiro >= 100) {
+        document.querySelector(".loja").style.display = "flex"
+    }
+}
+
+
 
 bttGas.addEventListener("mousedown", startGas)
 bttGas.addEventListener("mouseup", stopGas)

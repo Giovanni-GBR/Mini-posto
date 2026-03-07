@@ -34,12 +34,14 @@ header .header-content{
     width: 90px;
 }
 header .content-coin{
+    gap: 2px;
     font-weight: bold;
     color: #FFC107;
     border-top-right-radius: 0;
     border-bottom-right-radius: 50px;
 }
 header .content-combo{
+    gap: 5px;
     color: #FF8C00;
     border-top-left-radius: 0;
     border-bottom-left-radius: 50px;
@@ -53,11 +55,18 @@ ul{
     list-style: none;
 }
 .content-pedidos li{
+    position: relative;
+    left: -150%;
+    transform: translate(-150%, 0);
     padding: 10px;
     margin: 20px;
     border: 2px solid #4C79B8;
     border-radius: 10px;
-
+    transition: 2s;
+}
+li.ativo{
+    left: 0%;
+    transform: translate(0%, 0);
 }
 .content-pedidos h3{
     border-bottom: 1px solid #C7D2FE;
@@ -135,4 +144,17 @@ ul{
 }
 .item p{
     color: #FFD54A;
+}
+
+.loja{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.upgrade{
+    background: #333;
+    border: 1px solid;
+    border-radius: 8px;
+    height: 80px;
+    width: 80px;
 }
